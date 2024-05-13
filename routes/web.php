@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\KaryaController;
+use App\Http\Controllers\KomunitasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +18,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingPage');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/account/login', [AccountController::class,'Accountlogin']);
+Route::post('/login', [AccountController::class,'login']);
+Route::get('/logout', [AccountController::class, 'logout']);
+
+Route::resource('/account', AccountController::class);
+Route::resource('/karya', KaryaController::class);
+Route::resource('/komunitas', KomunitasController::class);
+Route::resource('/event', EventController::class);
