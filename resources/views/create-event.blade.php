@@ -27,12 +27,12 @@
                 </div>
             </div>
 
-            <label for="description" class="form-label">Description Event</label>
+            <label for="deskripsi_event" class="form-label">Description Event</label>
             <br>
-            <textarea class="form-control" type="text" name="description_event" id="description" required rows="3"></textarea>
+            <textarea class="form-control" type="text" name="deskripsi_event" id="deskripsi_event" required rows="3"></textarea>
 
             <button type="submit">Create</button>
-            <a href="/dashboard"> <button>Cancel</button> </a>
+            <a href="/"> <button>Cancel</button> </a>
             
     </form>
 

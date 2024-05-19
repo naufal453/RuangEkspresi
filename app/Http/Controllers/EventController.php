@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
     function index() {
-        // $event = Event::all();
-        // return view();
+        $event = Event::all();
+        return view('manage-event', ['eventList' => $event]);
     }
 
     function search(Request $request) {
@@ -30,7 +30,9 @@ class EventController extends Controller
         $event->nama_event = $request->nama_event;
         $event->tanggal_mulai = $request->tanggal_mulai;
         $event->tanggal_selesai = $request->tanggal_selesai;
-        $event->description_event = $request->description_event;
+        $event->deskripsi_event = $request->deskripsi_event;
+        $event->id_pengguna = 1;
+        $event->id_komunitas = 1;
         $event->save();
         return redirect('/event');
     }
