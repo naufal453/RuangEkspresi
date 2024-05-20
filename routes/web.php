@@ -18,14 +18,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
+    return view('pages.index');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/account/login', [AccountController::class,'Accountlogin']);
+Route::get('/login', [AccountController::class,'showLogin'])->name('showLogin');
+Route::get('/register', [AccountController::class,'showRegister'])->name('showRegister');
+
 Route::post('/login', [AccountController::class,'login']);
 Route::get('/logout', [AccountController::class, 'logout']);
 
