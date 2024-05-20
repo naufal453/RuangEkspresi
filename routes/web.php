@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+// pages
 Route::get('/login', [AccountController::class,'showLogin'])->name('showLogin');
 Route::get('/register', [AccountController::class,'showRegister'])->name('showRegister');
 
