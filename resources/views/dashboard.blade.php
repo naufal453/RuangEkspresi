@@ -40,9 +40,9 @@
                             <td>{{ $karya->tema }}</td>
                             <td>{{ $karya->deskripsi }}</td>
                             <td>
-                                <a class="btn btn-sm btn-info" href="{{ route('karya.edit', $karya->id) }}">Edit</a>
+                                <a class="btn btn-sm btn-info" href="/karya/edit/{{$karya->id}}">Edit</a>
                                 <br>
-                                <a href="{{ route('karya.show', $karya->id) }}">Show Detail Karya</a>
+                                <a href="/karya/show/{{$karya->id}}">Show Detail Karya</a>
 
                                 <form action="/karya/{{ $karya->id }}" method="POST" style="display:inline-block;">
                                     @method('DELETE')

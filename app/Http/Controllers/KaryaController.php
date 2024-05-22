@@ -25,6 +25,7 @@ class KaryaController extends Controller
     {
         // Validate the request data
         $validatedData = $request->validate([
+            'idPengguna' => 'required',
             'judulKarya' => 'required',
             'tema' => 'required',
             'deskripsi' => 'required'
@@ -32,6 +33,7 @@ class KaryaController extends Controller
 
         // Assuming you have a Karya model
         $karya = new Karya();
+        $karya->pengguna_id = $validatedData['idPengguna'];
         $karya->judulKarya = $validatedData['judulKarya'];
         $karya->tema = $validatedData['tema'];
         $karya->deskripsi = $validatedData['deskripsi'];

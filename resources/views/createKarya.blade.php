@@ -9,15 +9,20 @@
     <h1>Buat Karya</h1>
     <form method="POST" action="/karya">
         @csrf
-        <label for="username">judulKarya</label>
-        <input type="text" name="judulKarya" id="username">
+        <input type="number" name="idPengguna" id="idPengguna" value="{{session('account')['id']}}" hidden >
+
+        <label for="judulKarya">judulKarya</label>
+        <input type="text" name="judulKarya" id="judulKarya">
         <br>
-        <label for="username">tema</label>
-        <input type="text" name="tema" id="username">
+        <label for="deskripsi">deskripsi</label>
+        <input type="text" name="deskripsi" id="deskripsi">
         <br>
-        <label for="username">deskripsi</label>
-        <input type="text" name="deskripsi" id="username">
+        <label for="tema">tema</label>
+        <input type="text" name="tema" id="tema">
         <br>
         <button type="submit">Buat</button>
     </form>
+    <style>
+
+    </style>
 @endsection

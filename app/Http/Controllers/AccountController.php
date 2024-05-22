@@ -11,43 +11,43 @@ use Illuminate\Support\Facades\DB;
 class AccountController extends Controller
 {
     //Pages
-    public function showRegister()
+    public function AccountRegister()
     {
-        return view('pages.register');
+        return view('register');
     }
-
-    public function showLogin()
-    {
-        return view('pages.login');
-    }
-
 
     //save
     public function store(Request $request)
     {
+        // dd($request);
         $valdata = $request->validate([
             'username' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'email' => 'required'
         ]);
         $valdata['password'] = Hash::make($valdata['password']);
 
         $cek = Account::where('username', $valdata['username'])->first();
         if ($cek) {
-            return redirect('/account/create')->with('error', 'username telah digunakan');
+            return redirect('/register')->with('error', 'username telah digunakan');
         }
 
         $account = new Account();
         $account->username = $valdata['username'];
         $account->password = $valdata['password'];
+        $account->email = $valdata['email'];
         // dd($account);
-        $berhasil = DB::insert('INSERT INTO accounts (username, password) VALUES (?, ?)', [
+        $berhasil = DB::insert('INSERT INTO `penggunas` (`id`, `username`, `password`, `email`, `role`, `created_at`, `updated_at`) VALUES (NULL, ?, ?, ?, "User", ?,?);', [
             $account->username,
-            $account->password
+            $account->password,
+            $account->email,
+            now(),
+            now()
         ]);
         if($berhasil){
-            return redirect('/account/login');
+            return redirect('/login');
         } else {
-            return redirect('/account/create')->with('error', 'regist gagal');
+            return redirect('/regist')->with('error', 'regist gagal');
         }
     }
 
