@@ -28,7 +28,10 @@ Route::get('/dashboard', function () {
     return view('dashboard',['karyas' => $karya]);
 });
 
-Route::get('/account/login', [AccountController::class,'Accountlogin']);
+// pages
+Route::get('/login', [AccountController::class,'showLogin'])->name('showLogin');
+Route::get('/register', [AccountController::class,'showRegister'])->name('showRegister');
+
 Route::post('/login', [AccountController::class,'login']);
 Route::get('/logout', [AccountController::class, 'logout']);
 

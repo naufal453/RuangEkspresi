@@ -10,12 +10,15 @@ use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
-    //
-
-    //create
-    public function create()
+    //Pages
+    public function showRegister()
     {
-        return view('register');
+        return view('pages.register');
+    }
+
+    public function showLogin()
+    {
+        return view('pages.login');
     }
 
 
@@ -41,15 +44,14 @@ class AccountController extends Controller
             $account->username,
             $account->password
         ]);
-        if ($berhasil) {
-            return redirect('/account/login')->with('success', 'Account created successfully!');
+        if($berhasil){
+            return redirect('/account/login');
         } else {
             return redirect('/account/create')->with('error', 'regist gagal');
         }
     }
 
-    public function Accountlogin()
-    {
+    public function Accountlogin(){
         return view('login');
     }
 
