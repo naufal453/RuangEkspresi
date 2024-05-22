@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    @include('components.navbar')
+    {{-- @include('components.navbar') --}}
     <div>
         @yield('content')
     </div>
