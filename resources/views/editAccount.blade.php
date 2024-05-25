@@ -92,18 +92,22 @@
     <div class="container">
         <div class="header">
             <h1>Ubah Data Account</h1>
+            <!-- tombol silang -->
             <span class="close-btn">&times;</span>
         </div>
         <div class="profile">
+            <!-- foto profil -->
             <img src="profile-picture.png" alt="Profile Picture">
             <div class="name">Kevin Aluminium</div>
             <button class="edit-photo">Ubah Foto</button>
         </div>
         <div class="input-group">
+            <!-- Input username -->
             <label for="username">Username</label>
             <input type="text" id="username" placeholder="Username">
         </div>
         <div class="input-group">
+            <!-- Input Password -->
             <label for="password">Kata Sandi</label>
             <input type="password" id="password" placeholder="Kata Sandi">
         </div>
